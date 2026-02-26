@@ -1,0 +1,15 @@
+@startuml
+skinparam defaultFontName "Fira Code"
+actor User
+participant CounterUI
+participant CounterCtrl
+participant Counter
+
+User -> CounterUI: 
+CounterUI -> CounterCtrl ++ : plus()
+CounterCtrl -> Counter: increment()
+CounterCtrl -> CounterUI ++ : update()
+CounterUI -> Counter : getValue()
+CounterUI --> CounterCtrl --
+CounterCtrl --> CounterUI -- 
+@enduml

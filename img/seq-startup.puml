@@ -1,0 +1,12 @@
+@startuml
+skinparam defaultFontName "Fira Code"
+participant MainApp
+participant Counter
+participant CounterCtrl
+participant CounterUI
+
+MainApp -> Counter ** : new Counter()
+MainApp -> CounterCtrl ** : new CounterCtrl(counter)
+MainApp -> CounterUI ** : new CounterUI(counter, controller)
+CounterUI -> CounterCtrl : setUI(this)
+@enduml

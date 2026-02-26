@@ -1,0 +1,24 @@
+@startuml
+    class CounterUI {
+        +update()
+    }
+    class Counter {
+        +increment()
+        +decrement()
+        +reset()
+        +getValue()
+    }
+    class CounterCtrl {
+        +plus()
+        +minus()
+        +reset()
+        ~setUI()
+    }
+    CounterUI -> Counter: counter
+    CounterCtrl -> CounterUI: ui
+    CounterCtrl -> Counter: counter
+    CounterUI ..> CounterCtrl :uses
+    Counter <.. MainApp: creates
+    CounterCtrl <.. MainApp: creates
+    CounterUI <.. MainApp: creates
+@enduml
